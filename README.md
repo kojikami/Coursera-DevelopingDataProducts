@@ -9,13 +9,16 @@ You can access my app with the URL here: [http://kojikami.shinyapps.io/us-popula
 * It loads the dataset for US population from 2000 to 2010
 * You can interact with the model using Sliders on the left side
 * Based on the Year selected, the map and the table will show the result reactively
-* Google Geo Chart with R is used for controlling inputs/outputs
+* [Google Geo Chart with R](http://www.rdocumentation.org/packages/googleVis/functions/gvisGeoChart) is used for controlling inputs/outputs
 
 #### A little more Description on gvisGeoChart
 The gvisGeoChart function reads a data.frame and creates text output referring to the Google Visualisation API, which can be included into a web page, or as a stand-alone page.
+
 *Usage*
-`gvisGeoChart(data, locationvar = "", colorvar = "", sizevar = "",
-  hovervar = "", options = list(), chartid)`
+```{r}
+gvisGeoChart(data, locationvar = "", colorvar = "", sizevar = "",
+  hovervar = "", options = list(), chartid)
+```
 
 ## My Reproducible Pitch
 
