@@ -22,7 +22,7 @@ gvisGeoChart(data, locationvar = "", colorvar = "", sizevar = "",
 ```
 ## My Reproducible Pitch
 I created the pitch for my Shiny Application with [R Presentation](https://github.com/kojikami/Coursera-DevelopingDataProducts/blob/master/shinyapp-pitch.Rpres)
-You can access my pitch with the URL here: http://kojikami.shinyapps.io/us-population-by-state
+You can access my pitch with the URL here: http://rpubs.com/kojikami/us-population-by-state
 
 ## Appendix: Coursera Assignment Description
 >### Shiny Application
