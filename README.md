@@ -19,11 +19,10 @@ The gvisGeoChart function reads a data.frame and creates text output referring t
 gvisGeoChart(data, locationvar = "", colorvar = "", sizevar = "",
   hovervar = "", options = list(), chartid)
 ```
-
 ## My Reproducible Pitch
+I created the pitch for my Shiny Application with [R Presentation]()
 
-
-## Coursera Assignment Description
+## Appendix: Coursera Assignment Description
 >### Shiny Application
 >
 >1. Write a shiny application with associated supporting documentation. The documentation should be thought of as whatever a user will need to get started using your application.
@@ -34,7 +33,7 @@ gvisGeoChart(data, locationvar = "", colorvar = "", sizevar = "",
 >
 >4. Share your server.R and ui.R code on github
 >
->Reproducible Pitch
+>### Reproducible Pitch
 >
 >You get 5 slides (inclusive of the title slide)  to pitch a your app. You're going to create a web page using Slidify or Rstudio Presenter with an html5 slide deck.
 >

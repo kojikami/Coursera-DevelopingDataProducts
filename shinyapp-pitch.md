@@ -1,0 +1,75 @@
+Shiny Application for Analyzing US Population
+========================================================
+author: kojikami
+date: March 21, 2015
+width: 1200
+font-family: 'Calibri'
+<small> 
+Coursera Data Science Specialization <br>
+Developing Data Products - Course Project
+</small>
+Executive Summary
+========================================================
+- I turned my Shiny app into a web page using RStudio’s hosting service for Shiny apps - shinyapps.io. You can access my app with the URL here:
+    - http://kojikami.shinyapps.io/us-population-by-state
+
+- It loads the dataset for US population from 2000 to 2010
+- You can interact with the model using Sliders on the left side
+- Based on the Year selected, the map and the table will show the result reactively
+- [Google Geo Chart with R](http://www.rdocumentation.org/packages/googleVis/functions/gvisGeoChart) is used for controlling inputs/outputs
+
+Code Detail: ui.R
+========================================================
+
+
+```r
+require(shiny)
+
+shinyUI(pageWithSidebar(
+   headerPanel("US Population by State"),
+   sidebarPanel(
+   sliderInput("Year",
+               "Year & Population to be displayed:", 
+        min=2000, max=2010, value=2000, step=1,
+        animate=TRUE)),
+        mainPanel(
+                h3(textOutput("year")), 
+                htmlOutput("chart"),
+                htmlOutput("gvis"))
+))
+```
+
+Code Detail: server.R (output$gvis)
+========================================================
+
+
+```r
+output$gvis <- renderGvis({
+   myData <- subset(dat, (year > (myYear() - 1))
+                    & (year < (myYear() + 1)))
+
+   geo <- gvisGeoChart(na.omit(myData),
+        locationvar = "state", colorvar = "population",
+        options=list(region = "US",
+           displayMode = "regions", 
+           resolution = "provinces",
+           width = 600, height = 400))
+
+   tbl <- gvisTable(na.omit(myData), 
+           options = list(height = 300, width = 300))
+           gvisMerge(geo, tbl, horizontal = FALSE)                
+})
+```
+
+Conclusion
+========================================================
+- Based on the visualization through the model, population in California shows the most growth in the U.S. from 27,915,891 to 30,690,139 in 10 years
+- A Little More Description on gvisGeoChart
+    - The gvisGeoChart function reads a data.frame and creates text output referring to the Google Visualisation API, which can be included into a web page, or as a stand-alone page.
+    - Usage
+
+```r
+gvisGeoChart(data, locationvar = "", colorvar = "", 
+   sizevar = "", hovervar = "",
+   options = list(), chartid)
+```
