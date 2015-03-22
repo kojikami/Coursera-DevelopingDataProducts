@@ -6,6 +6,7 @@ I turned my Shiny app into a web page using RStudio’s hosting service for Shin
 You can access my app with the URL here: [http://kojikami.shinyapps.io/us-population-by-state](http://kojikami.shinyapps.io/us-population-by-state):
 
 #### Application Descriptions
+* You can see detail codes for my [ui.R](https://github.com/kojikami/Coursera-DevelopingDataProducts/blob/master/ui.R) and [server.R](https://github.com/kojikami/Coursera-DevelopingDataProducts/blob/master/server.R)
 * It loads the dataset for US population from 2000 to 2010
 * You can interact with the model using Sliders on the left side
 * Based on the Year selected, the map and the table will show the result reactively
@@ -20,7 +21,8 @@ gvisGeoChart(data, locationvar = "", colorvar = "", sizevar = "",
   hovervar = "", options = list(), chartid)
 ```
 ## My Reproducible Pitch
-I created the pitch for my Shiny Application with [R Presentation]()
+I created the pitch for my Shiny Application with [R Presentation](https://github.com/kojikami/Coursera-DevelopingDataProducts/blob/master/shinyapp-pitch.Rpres)
+You can access my pitch with the URL here: http://kojikami.shinyapps.io/us-population-by-state
 
 ## Appendix: Coursera Assignment Description
 >### Shiny Application
