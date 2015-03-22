@@ -27,7 +27,7 @@ shinyServer(function(input, output) {
                 input$Year
         })
         output$year <- renderText({
-                paste("US Population by State for Year", myYear())
+                paste("For Year", myYear())
         })
         output$gvis <- renderGvis({
                 myData <- subset(dat, 
